@@ -1,17 +1,17 @@
-// 1.
-// Here are 3 functions that return promises
-// 1st function creates a random number and refactors the name
-// 2nd function decides the level of the user
-// 3rd function gives hit points and strength of user based on level
-// Using async await....create a function called login, that takes a name and email
-// Success from the function will log a string using values from all 3 functions
-// Successful String Output: '<name from loginUser> is an <level> player with <strength> strength and <hitPoint> hit points.'
-// Failed String Output: 'User Not Logged in'
-
-// Except for loginUser, calling a function requires a value from the previous function
-// Do not edit loginUser, level or levelPower except to test the error variable
-// log the error message in your function so that it shows the message if reject has been called
-
+/*********************************************************************************************************************************
+ *                                                             // 1.                                                             *
+ *                                         // HERE ARE 3 FUNCTIONS THAT RETURN PROMISES                                          *
+ *                                // 1ST FUNCTION CREATES A RANDOM NUMBER AND REFACTORS THE NAME                                 *
+ *                                         // 2ND FUNCTION DECIDES THE LEVEL OF THE USER                                         *
+ *                             // 3RD FUNCTION GIVES HIT POINTS AND STRENGTH OF USER BASED ON LEVEL                              *
+ *                      // USING ASYNC AWAIT....CREATE A FUNCTION CALLED LOGIN, THAT TAKES A NAME AND EMAIL                      *
+ *                       // SUCCESS FROM THE FUNCTION WILL LOG A STRING USING VALUES FROM ALL 3 FUNCTIONS                        *
+ * // SUCCESSFUL STRING OUTPUT: '<NAME FROM LOGINUSER> IS AN <LEVEL> PLAYER WITH <STRENGTH> STRENGTH AND <HITPOINT> HIT POINTS.' *
+ *                                         // FAILED STRING OUTPUT: 'USER NOT LOGGED IN'                                         *
+ *                    // EXCEPT FOR LOGINUSER, CALLING A FUNCTION REQUIRES A VALUE FROM THE PREVIOUS FUNCTION                    *
+ *                        // DO NOT EDIT LOGINUSER, LEVEL OR LEVELPOWER EXCEPT TO TEST THE ERROR VARIABLE                        *
+ *               // LOG THE ERROR MESSAGE IN YOUR FUNCTION SO THAT IT SHOWS THE MESSAGE IF REJECT HAS BEEN CALLED                *
+ *********************************************************************************************************************************/
 const loginUser = (name) => {
     return new Promise((resolve, reject) => {
         const error = false;
@@ -54,7 +54,10 @@ async function login(name, email) {
         const loginName = await loginUser()
         const playerLevel = await level()
         const powerLevel = await levelPower()
-        console.log(`${loginName}, ${playerLevel}, ${powerLevel}`)
+
+
+
+        console.log(`${loginName.name} is an ${playerLevel} player with ${powerLevel.strength} strength and ${powerLevel.hitPoints} hit points`)
     }
     catch (err) {
         console.log(err)
